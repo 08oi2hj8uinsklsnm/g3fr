@@ -8,14 +8,21 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const client = new Discord.Client();
 
+
 client.on('ready', () => {	
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[xd] ${client.users.size}`)
     client.user.setStatus("online")
 });
+client.on('ready', () => {
+  client.user.setActivity("Type 1play", {type: 'LISTENING'});
+  console.log('---------------');
+  console.log(' Bot Is Online')
+  console.log('---------------')
+});
 
-const prefix = "-"
+const prefix = "1"
 client.on('message', async msg => {
 	if (msg.author.bot) return undefined;
 	
